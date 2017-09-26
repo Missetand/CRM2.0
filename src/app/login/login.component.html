@@ -1,0 +1,16 @@
+<md-card *ngIf="!(authService.user | async)">
+  <md-input-container>
+  <input mdInput [(ngModel)]="email" placeholder="Email">
+  </md-input-container>
+  <br>
+  <md-input-container>
+  <input mdInput type="password" [(ngModel)]="password" placeholder="Password">
+  </md-input-container>
+  <!-- <button md-fab (click)="signup()" [disabled]="!email || !password">
+    Signup
+  </button> -->
+  <br>
+  <button md-raised-button color="primary" (click)="login()" [disabled]="!email || !password">
+    Login
+  </button>
+</md-card>
