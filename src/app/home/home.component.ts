@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs/Subject';
 
-import { MdPaginator } from '@angular/material';
+import { MdPaginator, MdSort } from '@angular/material';
 import { CustomerDatabase, CustomerDataService, CustomerSource } from '../customer-data.service';
 
 
@@ -17,9 +17,9 @@ import { Customer } from '../customer.model';
 
 export class HomeComponent implements OnInit {
 
-  membersData: Customer[];
+  CustomerData: Customer[];
   private result: boolean;
-  allMembers: Customer[];
+  allCustomers: Customer[];
 
   // For search
   startAt = new Subject();
@@ -43,6 +43,7 @@ export class HomeComponent implements OnInit {
 
   @ViewChild(MdPaginator)
   paginator: MdPaginator;
+  sort: MdSort;
 
   public dataLength: any; // For member counter on DOM.
 
@@ -54,10 +55,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
 
-      this.customerDatabase.getMembers()
-          .subscribe(members => {
+      this.customerDatabase.getCustomers()
+          .subscribe(customers => {
               this.dataSource = new CustomerSource(this.customerDatabase, this.paginator);
-              this.dataLength = members;
+              this.dataLength = customers;
           });
     }
 }

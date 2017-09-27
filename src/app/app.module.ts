@@ -25,10 +25,11 @@ import { HomeComponent } from './home/home.component';
 import { CustomerDataService, CustomerDatabase, CustomerSource } from './customer-data.service';
 import { MunicipalitiesComponent } from './municipality-components/municipalities/municipalities.component';
 import { LoginComponent } from './login/login.component';
+import { NewMunicipalityComponent } from './municipality-components/new-municipality/new-municipality.component';
 
 
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent},
+  { path: '', component: HomeComponent, canActivate: [ AuthGuard ]},
   { path: 'login', component: LoginComponent },
   { path: 'municipalities', component: MunicipalitiesComponent, canActivate: [ AuthGuard ] }
 ];
@@ -42,6 +43,7 @@ const appRoutes: Routes = [
     HomeComponent,
     MunicipalitiesComponent,
     LoginComponent,
+    NewMunicipalityComponent,
   ],
   imports: [
     BrowserModule,

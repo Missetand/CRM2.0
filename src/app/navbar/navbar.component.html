@@ -1,6 +1,5 @@
 <md-toolbar color="primary">
-  <h1>CRM2.0</h1>
-  <md-icon class="icon" [routerLink]="['']">home</md-icon>
+  <h1 [routerLink]="['']">CRM2.0</h1>
   <span class="spacer"></span>
   <p *ngIf="authService.user | async">Welcome {{ (authService.user | async)?.email }}</p>
   <button md-button (click)="logout()" *ngIf="authService.user | async">

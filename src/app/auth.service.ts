@@ -59,6 +59,7 @@ export class AuthService {
   logout() {
     this.firebaseAuth.auth.signOut();
     localStorage.clear();
+    this.router.navigate(['/login']);
   }
 
   getEmail() {

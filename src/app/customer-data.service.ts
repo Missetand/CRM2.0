@@ -51,13 +51,13 @@ export class CustomerDatabase {
             orderByChild: 'firmName'
         }
     });
-    public getMembers(): FirebaseListObservable<Customer[]> {
+    public getCustomers(): FirebaseListObservable<Customer[]> {
         return this.database;
     }
 
 
     constructor(private customerService: CustomerDataService) {
-        this.getMembers()
+        this.getCustomers()
             .subscribe(data => this.dataChange.next(data));
     }
 }
