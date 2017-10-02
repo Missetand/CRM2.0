@@ -1,30 +1,35 @@
 <app-new-municipality></app-new-municipality>
-<router-outlet></router-outlet>
 <div class="table-container">
   <md-table #table [dataSource]="dataSource">
 
 
     <ng-container mdColumnDef="firmName">
-      <md-header-cell *mdHeaderCellDef md-sort-header> Firm Name </md-header-cell>
+      <md-header-cell *mdHeaderCellDef > Firm Name </md-header-cell>
       <md-cell *mdCellDef="let row"> {{row.firmName}} </md-cell>
     </ng-container>
 
     <ng-container mdColumnDef="cvr">
-      <md-header-cell *mdHeaderCellDef md-sort-header> CVR </md-header-cell>
+      <md-header-cell *mdHeaderCellDef > CVR </md-header-cell>
       <md-cell *mdCellDef="let row"> {{row.cvr}} </md-cell>
     </ng-container>
 
+    <ng-container mdColumnDef="email">
+      <md-header-cell *mdHeaderCellDef > Email </md-header-cell>
+      <md-cell *mdCellDef="let row"> {{row.email}} </md-cell>
+    </ng-container>
+
+
     <ng-container mdColumnDef="phoneNumber">
-      <md-header-cell *mdHeaderCellDef md-sort-header> Phone Number </md-header-cell>
+      <md-header-cell *mdHeaderCellDef > Phone Number </md-header-cell>
       <md-cell *mdCellDef="let row"> {{row.phoneNumber}} </md-cell>
     </ng-container>
 
     <ng-container mdColumnDef="address">
-      <md-header-cell *mdHeaderCellDef md-sort-header> Address </md-header-cell>
+      <md-header-cell *mdHeaderCellDef > Address </md-header-cell>
       <md-cell *mdCellDef="let row"> {{row.address}} </md-cell>
     </ng-container>
 
-    <ng-container mdColumnDef="zipCode" md-sort-header>
+    <ng-container mdColumnDef="zipCode" >
       <md-header-cell *mdHeaderCellDef> Zip Code </md-header-cell>
       <md-cell *mdCellDef="let row"> {{row.zipCode}} </md-cell>
     </ng-container>
@@ -34,7 +39,7 @@
       <md-cell *mdCellDef="let row"> {{row.comment}} </md-cell>
     </ng-container>
 
-    <ng-container mdColumnDef="priority" md-sort-header>
+    <ng-container mdColumnDef="priority" >
       <md-header-cell *mdHeaderCellDef> Priority </md-header-cell>
       <md-cell *mdCellDef="let row"> {{row.priority}} </md-cell>
     </ng-container>

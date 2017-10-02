@@ -2,7 +2,7 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 import { FirebaseApp } from 'angularfire2';
 import { Inject, Injectable } from '@angular/core';
 
-import { Customer } from './customer.model';
+import { Customer } from '../model';
 
 // Data Table imports.
 import { MdPaginator } from '@angular/material';

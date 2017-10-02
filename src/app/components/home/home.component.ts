@@ -3,10 +3,10 @@ import { Router } from '@angular/router';
 import { Subject } from 'rxjs/Subject';
 
 import { MdPaginator, MdSort } from '@angular/material';
-import { CustomerDatabase, CustomerDataService, CustomerSource } from '../customer-data.service';
+import { CustomerDatabase, CustomerDataService, CustomerSource } from '../../services';
 
 
-import { Customer } from '../customer.model';
+import { Customer } from '../../model/customer.model';
 
 
 

@@ -1,3 +1,105 @@
-<p>
-  new-municipality works!
-</p>
+<md-horizontal-stepper [linear]="isLinear">
+  <md-step [stepControl]="firmFormGroup">
+    <form [formGroup]="firmFormGroup">
+      <ng-template mdStepLabel>Fill out firm name</ng-template>
+      <md-form-field>
+        <input mdInput placeholder="Firm name" formControlName="firmCtrl" required>
+      </md-form-field>
+      <div>
+        <button md-button mdStepperNext>Next</button>
+      </div>
+    </form>
+  </md-step>
+  <md-step [stepControl]="cvrFormGroup">
+    <form [formGroup]="cvrFormGroup">
+      <ng-template mdStepLabel>Fill out the cvr</ng-template>
+      <md-form-field>
+        <input mdInput placeholder="CVR" formControlName="cvrCtrl" required>
+      </md-form-field>
+      <div>
+        <button md-button mdStepperPrevious>Back</button>
+        <button md-button mdStepperNext>Next</button>
+      </div>
+    </form>
+  </md-step>
+  <md-step [stepControl]="emailFormGroup">
+    <form [formGroup]="emailFormGroup">
+      <ng-template mdStepLabel>Fill out the email</ng-template>
+      <md-form-field>
+        <input mdInput placeholder="Email" formControlName="emailCtrl" required>
+      </md-form-field>
+      <div>
+        <button md-button mdStepperPrevious>Back</button>
+        <button md-button mdStepperNext>Next</button>
+      </div>
+    </form>
+  </md-step>
+  <md-step [stepControl]="phoneFormGroup">
+    <form [formGroup]="phoneFormGroup">
+      <ng-template mdStepLabel>Fill out the phone number</ng-template>
+      <md-form-field>
+        <input mdInput placeholder="Phone number" formControlName="phoneCtrl" required>
+      </md-form-field>
+      <div>
+        <button md-button mdStepperPrevious>Back</button>
+        <button md-button mdStepperNext>Next</button>
+      </div>
+    </form>
+  </md-step>
+  <md-step [stepControl]="addressFormGroup">
+    <form [formGroup]="addressFormGroup">
+      <ng-template mdStepLabel>Fill out the address</ng-template>
+      <md-form-field>
+        <input mdInput placeholder="Address" formControlName="addressCtrl" required>
+      </md-form-field>
+      <div>
+        <button md-button mdStepperPrevious>Back</button>
+        <button md-button mdStepperNext>Next</button>
+      </div>
+    </form>
+  </md-step>
+  <md-step [stepControl]="zipFormGroup">
+    <form [formGroup]="zipFormGroup">
+      <ng-template mdStepLabel>Fill out the zip code</ng-template>
+      <md-form-field>
+        <input mdInput placeholder="Zip code" formControlName="zipCtrl" required>
+      </md-form-field>
+      <div>
+        <button md-button mdStepperPrevious>Back</button>
+        <button md-button mdStepperNext>Next</button>
+      </div>
+    </form>
+  </md-step>
+  <md-step [stepControl]="commentFormGroup">
+    <form [formGroup]="commentFormGroup">
+      <ng-template mdStepLabel>Fill out the comments / notes</ng-template>
+      <md-form-field>
+        <input mdInput placeholder="Comments / Notes" formControlName="commentCtrl" required>
+      </md-form-field>
+      <div>
+        <button md-button mdStepperPrevious>Back</button>
+        <button md-button mdStepperNext>Next</button>
+      </div>
+    </form>
+  </md-step>
+  <md-step [stepControl]="priorityFormGroup">
+    <form [formGroup]="priorityFormGroup">
+      <ng-template mdStepLabel>Fill out the priority</ng-template>
+      <md-form-field>
+        <input mdInput placeholder="Priority" formControlName="priorityCtrl" required>
+      </md-form-field>
+      <div>
+        <button md-button mdStepperPrevious>Back</button>
+        <button md-button mdStepperNext>Next</button>
+      </div>
+    </form>
+  </md-step>
+  <md-step>
+    <ng-template mdStepLabel>Done</ng-template>
+    <p>Thank you for your submission.</p>
+    <p>You are now done.</p>
+    <div>
+      <button md-button mdStepperPrevious>Back</button>
+    </div>
+  </md-step>
+</md-horizontal-stepper>
