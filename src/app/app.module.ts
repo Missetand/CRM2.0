@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
+import { RoutingModule } from './routing/routing.module';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -16,15 +16,6 @@ import { AuthGuard } from './auth-guard.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent, LoginComponent, NavbarComponent, MunicipalitiesComponent, NewMunicipalityComponent } from './components/index';
-
-
-
-const appRoutes: Routes = [
-  { path: '', component: HomeComponent, canActivate: [ AuthGuard ]},
-  { path: 'login', component: LoginComponent },
-  { path: 'municipalities', component: MunicipalitiesComponent, canActivate: [ AuthGuard ] }
-];
-
 
 
 @NgModule({
@@ -42,7 +33,7 @@ const appRoutes: Routes = [
     SharedMaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(appRoutes),
+    RoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFireDatabaseModule
