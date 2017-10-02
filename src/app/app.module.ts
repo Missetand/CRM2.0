@@ -7,25 +7,16 @@ import { NgModule } from '@angular/core';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-
 import { environment } from '../environments/environment';
 
-import { MdToolbarModule, MdIconModule,
-         MdGridListModule, MdTableModule,
-         MdPaginatorModule, MdButtonModule,
-         MatInputModule, MatCardModule
-       } from '@angular/material';
+import { SharedMaterialModule } from './shared/shared.material';
 
-import { AuthService } from './auth.service';
+import { AuthService, CustomerDatabase, CustomerDataService, CustomerSource } from './services/index';
 import { AuthGuard } from './auth-guard.service';
 
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { HomeComponent } from './home/home.component';
-import { CustomerDataService, CustomerDatabase, CustomerSource } from './customer-data.service';
-import { MunicipalitiesComponent } from './municipality-components/municipalities/municipalities.component';
-import { LoginComponent } from './login/login.component';
-import { NewMunicipalityComponent } from './municipality-components/new-municipality/new-municipality.component';
+import { HomeComponent, LoginComponent, NavbarComponent, MunicipalitiesComponent, NewMunicipalityComponent } from './components/index';
+
 
 
 const appRoutes: Routes = [
@@ -48,14 +39,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MdToolbarModule,
-    MdButtonModule,
-    MdIconModule,
-    MdGridListModule,
-    MdTableModule,
-    MdPaginatorModule,
-    MatInputModule,
-    MatCardModule,
+    SharedMaterialModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes),
